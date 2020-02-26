@@ -1,11 +1,16 @@
 $(document).ready(function() {
 	var game = new Game();
 	var turn = 'X';
-	var role = 1;
 
 	$('.button').click(function() {
-		scoreArray = bowlingRules.takeTurn(role, parseInt($(this).text()), score);
-		displayScreen(scoreArray);
+		$(this).text(turn);
+		$(this).attr('disabled', true);
+		console.log(turn);
+		if (turn === 'X') {
+			turn = 'O';
+		} else {
+			turn = 'X';
+		}
 	});
 
 	function displayGrid(gridArray) {

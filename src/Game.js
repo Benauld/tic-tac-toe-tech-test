@@ -1,11 +1,6 @@
 'use strict';
 function Game() {
-	this.currentTemperature = 20;
+	(this.gameBoard = ['', '', '']), ['', '', ''], ['', '', ''];
 }
 
-Game.prototype.increase = function() {
-	if (this.currentTemperature < this.maximumTemperature) {
-		this.currentTemperature += 1;
-	}
-	return this.currentTemperature;
-};
+Game.prototype.takeTurn = function() {};

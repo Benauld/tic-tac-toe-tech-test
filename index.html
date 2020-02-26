@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bowling Scorecard</title>
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -14,27 +14,32 @@
     <div
         <section>
             <!--main body of text page 1-->
-            <h2> Bowling Scorecard  </h2>
+            <div>
+            <h2> Tic-Tac-Toe  </h2>
+            <ul>
+                <li id="player1">Player 1: X</li>
+                <li id="player2">Player 2: O</li>
+            </ul>
+            </div>
+
             <p>
-                <button class="button" id="0">0</button>
-                <button class="button" id="1">1</button>
-                <button class="button" id="2">2</button>
-                <button class="button" id="3">3</button>
-                <button class="button" id="4">4</button>
-                <button class="button" id="5">5</button>
-                <button class="button" id="6">6</button>
-                <button class="button" id="7">7</button>
-                <button class="button" id="8">8</button>
-                <button class="button" id="9">9</button>
-                <button class="button" id="10">10</button>
+                <button class="button" id="0"> </button>
+                <button class="button" id="1"> </button>
+                <button class="button" id="2"> </button>
             </p>
+            <p>
+                <button class="button" id="3"> </button>
+                <button class="button" id="4"> </button>
+                <button class="button" id="5"> </button>
+            </p>
+            <p>
+                <button class="button" id="6"> </button>
+                <button class="button" id="7"> </button>
+                <button class="button" id="8"> </button>
+            </p>
+           
         </section>   
       </div>
-      <div>
-          <table>
-              <tr id="create-table"></tr>
-           </table>
-        </div>
-    <script src="src/myJquery.js"></script>
-    <script src="src/bowlingRules.js"></script>
+    <script src="src/gameJquery.js"></script>
+    <script src="src/game.js"></script>
 </body>
