@@ -5,7 +5,13 @@ $(document).ready(function() {
 	$('.button').click(function() {
 		$(this).text(turn);
 		$(this).attr('disabled', true);
+		$(this).css('color', 'white');
 		console.log(turn);
+		var winner = game.takeTurn(turn, parseInt($(this).attr('id')));
+		console.log(winner);
+		if (winner === true) {
+			console.log(turn);
+		}
 		if (turn === 'X') {
 			turn = 'O';
 		} else {
@@ -13,29 +19,10 @@ $(document).ready(function() {
 		}
 	});
 
-	function displayGrid(gridArray) {
-		for (let i = 1; i < 11; i++) {
-			if (i === 1) {
-				$('#create-table').replaceWith('<tr id="create-table"></tr>');
-			}
-			if (typeof scoreArray[i] !== 'undefined') {
-				$('#create-table').append(
-					'<tr><th rowspan="2">' +
-						String(i) +
-						':</th><td>' +
-						scoreArray[i].displayPins1stRole +
-						'</td>\
-          <th rowspan="2">' +
-						scoreArray[i].displayScore +
-						'</th></tr>\
-          <tr><td>' +
-						scoreArray[i].displayPins2ndRole +
-						'</td> </tr>'
-				);
-				var nextRole = scoreArray[i].nextTurn;
-				score = scoreArray[i].score;
-			}
-		}
-		return (role = nextRole);
-	}
+	$('.reset').click(function() {
+		$('.button').text('?');
+		$('.button').attr('disabled', false);
+		$('.button').css('color', 'rgb(84, 83, 83)');
+		game.reset();
+	});
 });

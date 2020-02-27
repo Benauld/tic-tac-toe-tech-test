@@ -42,13 +42,7 @@ body {
 	/* prevent scaling past src width (or not) */
 	/* max-width: 1200px; */
 }
-.currentTempDes {
-	color: white;
-	font-family: Roboto, sans-serif;
-	text-align: center;
-	font-size: 25px;
-	padding: 20px 20px 0px 20px;
-}
+
 li {
 	width: 90%;
 	margin: 0 auto; /*centre*/
@@ -71,12 +65,13 @@ li {
 	color: darkred;
 }
 
-.button {
+.button,
+.reset {
 	background-color: black;
 	display: inline-block;
 	border-radius: 50%;
 	border: none;
-	color: white;
+	color: rgb(84, 83, 83);
 	text-align: center;
 	font-size: 50px;
 	width: 80px;
@@ -85,15 +80,37 @@ li {
 	cursor: pointer;
 	margin: 5px;
 }
+.reset {
+	color: rgb(230, 230, 240);
+	width: 130px;
+	height: 50px;
+	font-size: 20px;
+	padding: 10px;
+	text-shadow: 0px -1px 1px rgba(30, 30, 30, 0.8);
+	-webkit-border-radius: 5.405421901393581px;
+	-moz-border-radius: 5.405421901393581px;
+	border-radius: 5.405421901393581px;
+	background: rgb(61, 84, 103);
+	background: -moz-linear-gradient(90deg, rgb(61, 84, 103) 23%, rgb(93, 153, 172) 70%);
+	background: -webkit-linear-gradient(90deg, rgb(61, 84, 103) 23%, rgb(93, 153, 172) 70%);
+	background: -o-linear-gradient(90deg, rgb(61, 84, 103) 23%, rgb(93, 153, 172) 70%);
+	background: -ms-linear-gradient(90deg, rgb(61, 84, 103) 23%, rgb(93, 153, 172) 70%);
+	background: linear-gradient(0deg, rgb(61, 84, 103) 23%, rgb(93, 153, 172) 70%);
+	-webkit-box-shadow: 0px 2px 1px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow: 0px 2px 1px rgba(50, 50, 50, 0.75);
+	box-shadow: 0px 2px 1px rgba(50, 50, 50, 0.75);
+}
 
-.button span {
+.button span,
+.reset span {
 	cursor: pointer;
 	display: inline-block;
 	position: relative;
 	transition: 0.5s;
 }
 
-.button span:after {
+.button span:after,
+.reset span:after {
 	content: '\00bb';
 	position: absolute;
 	opacity: 0;
@@ -102,7 +119,8 @@ li {
 	transition: 0.5s;
 }
 
-.button:hover span:after {
+.button:hover span:after,
+.reset:hover span:after {
 	opacity: 1;
 	right: 0;
 }
