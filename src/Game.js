@@ -11,27 +11,34 @@ function Game() {
 }
 
 Game.prototype.takeTurn = function(turn, id) {
+	this.winner = false;
 	Game.prototype.getNameNo(turn);
 	Game.prototype.updateGridRef(id, this.gameBoard);
-	this.winner = Game.prototype.determineWinner;
+	this.winner = Game.prototype.determineWinner();
+	console.log(this.winner);
 	return this.winner;
 };
 
 Game.prototype.determineWinner = function() {
 	var y = this.turnNo * 3;
+	console.log(this.gameBoard);
 	for (var x = 0; x < 3; x++) {
 		if (
-			this.gameBoard[x][0] + this.gameBoard[x] + this.gameBoard[x][2] == y ||
+			this.gameBoard[x][0] + this.gameBoard[x][1] + this.gameBoard[x][2] == y ||
 			this.gameBoard[0][x] + this.gameBoard[1][x] + this.gameBoard[2][x] == y
 		) {
-			return (this.winner = true);
+			console.log('line', this.winner);
+			this.winner = true;
+			return this.winner;
 		}
 	}
 	if (
 		this.gameBoard[0][0] + this.gameBoard[1][1] + this.gameBoard[2][2] == y ||
 		this.gameBoard[2][0] + this.gameBoard[1][1] + this.gameBoard[0][2] == y
 	) {
-		return (this.winner = true);
+		console.log('Diagonal', this.winner);
+		this.winner = true;
+		return this.winner;
 	}
 };
 
@@ -50,7 +57,7 @@ Game.prototype.getNameNo = function(turn) {
 	if (turn == 'X') {
 		this.turnNo = 1;
 	} else {
-		this.turnNo = 2;
+		this.turnNo = 9;
 	}
 };
 

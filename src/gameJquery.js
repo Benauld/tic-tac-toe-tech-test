@@ -6,11 +6,11 @@ $(document).ready(function() {
 		$(this).text(turn);
 		$(this).attr('disabled', true);
 		$(this).css('color', 'white');
-		console.log(turn);
 		var winner = game.takeTurn(turn, parseInt($(this).attr('id')));
-		console.log(winner);
 		if (winner === true) {
-			console.log(turn);
+			$('.winner').text('We have a winner !');
+			$('.winner').css('color', 'red');
+			$('.button').attr('disabled', true);
 		}
 		if (turn === 'X') {
 			turn = 'O';
@@ -23,6 +23,8 @@ $(document).ready(function() {
 		$('.button').text('?');
 		$('.button').attr('disabled', false);
 		$('.button').css('color', 'rgb(84, 83, 83)');
+		$('.winner').text('Game On!');
+		$('.winner').css('color', 'darkred');
 		game.reset();
 	});
 });
