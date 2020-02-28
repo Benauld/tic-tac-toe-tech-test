@@ -26,4 +26,5 @@ It can be run by opening SpecRunner.html in the browser
 
 ## The game
 
-The game should look as follows:
+The game should look as follows:\
+<img width="1033" alt="Screenshot 2020-02-28 at 13 27 02" src="https://user-images.githubusercontent.com/40060566/75553359-27bf4d00-5a30-11ea-8fe8-30fec0f07782.png">
