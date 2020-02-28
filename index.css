@@ -55,6 +55,7 @@ li {
 	text-align: center;
 	font-size: 25px;
 	padding: 20px 20px 0px 20px;
+	transition: all 0.5s;
 }
 
 .winner {
@@ -63,6 +64,7 @@ li {
 	margin-right: auto;
 	width: 30%;
 	color: darkred;
+	transition: all 0.8s;
 }
 
 .button,
@@ -123,4 +125,8 @@ li {
 .reset:hover span:after {
 	opacity: 1;
 	right: 0;
+}
+
+#player1 {
+	color: darkred;
 }
