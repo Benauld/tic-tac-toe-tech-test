@@ -7,20 +7,10 @@ $(document).ready(function() {
 		$(this).attr('disabled', true);
 		$(this).css('color', 'white');
 		var winner = game.takeTurn(turn, parseInt($(this).attr('id')));
-		if (winner === true) {
-			$('.winner').text('We have a winner!');
-			$('.winner').css('color', 'red');
-			$('.button').attr('disabled', true);
-		}
-		if (turn === 'X') {
-			turn = 'O';
-			$('#player2').css('color', 'darkred');
-			$('#player1').css('color', 'black');
-		} else {
-			turn = 'X';
-			$('#player1').css('color', 'darkred');
-			$('#player2').css('color', 'black');
-		}
+
+		winnerWinnerChickenDinner(winner);
+
+		turn = changeTurn(turn);
 	});
 
 	$('.reset').click(function() {
@@ -31,4 +21,26 @@ $(document).ready(function() {
 		$('.winner').css('color', 'darkred');
 		game.reset();
 	});
+
+	function changeTurn(turn) {
+		if (turn === 'X') {
+			turn = 'O';
+			$('#player2').css('color', 'darkred');
+			$('#player1').css('color', 'black');
+			return turn;
+		} else {
+			turn = 'X';
+			$('#player1').css('color', 'darkred');
+			$('#player2').css('color', 'black');
+			return turn;
+		}
+	}
+
+	function winnerWinnerChickenDinner(winner) {
+		if (winner === true) {
+			$('.winner').text('We have a winner!');
+			$('.winner').css('color', 'red');
+			$('.button').attr('disabled', true);
+		}
+	}
 });
